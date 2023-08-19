@@ -10,4 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The job is automatically triggered by a ${{ github.event_name }} event."
+    
+  install-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
 
