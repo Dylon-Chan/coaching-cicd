@@ -33,6 +33,7 @@ jobs:
 
   package-scan:
     runs-on: ubuntu-latest
+    needs: install-dependencies
     steps:
       - name: Checkout repo code
         uses: actions/checkout@v3
@@ -43,7 +44,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: unit-testing
+    needs: [unit-testing, package-scan]
     steps:
       - name: Checkout repo code
         uses: actions/checkout@v3
