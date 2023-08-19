@@ -15,7 +15,7 @@ functions:
       - httpApi:
           path: /
           method: get
-    env:
+    environment:
       ACCESS_KEY: ${ssm:wengsiong-parameter}
       
 plugins:
